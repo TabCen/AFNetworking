@@ -47,6 +47,7 @@
 		631FDFDD225B23BA00BEA302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631FDFDC225B23BA00BEA302 /* Assets.xcassets */; };
 		631FDFE0225B23BA00BEA302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631FDFDE225B23BA00BEA302 /* LaunchScreen.storyboard */; };
 		631FDFE3225B23BA00BEA302 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FDFE2225B23BA00BEA302 /* main.m */; };
+		6344DB75225EEA8900A6CE62 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6344DB74225EEA8900A6CE62 /* AFNetworking.framework */; };
 		C2BFE0251C11870800BB258D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BFE0241C11870800BB258D /* AppDelegate.m */; };
 		C2BFE0281C11872D00BB258D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BFE0271C11872D00BB258D /* AppDelegate.m */; };
 /* End PBXBuildFile section */
@@ -169,6 +170,7 @@
 		631FDFDF225B23BA00BEA302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		631FDFE1225B23BA00BEA302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		631FDFE2225B23BA00BEA302 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6344DB74225EEA8900A6CE62 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2BFE0231C11870800BB258D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C2BFE0241C11870800BB258D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C2BFE0261C11872D00BB258D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6344DB75225EEA8900A6CE62 /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +372,7 @@
 		29E6F1E71BB9E37200A4466C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6344DB74225EEA8900A6CE62 /* AFNetworking.framework */,
 				293206F31BD14AB50019EB9E /* AFNetworking.framework */,
 				291BFE361BB9EDD700FFB029 /* UIKit.framework */,
 				29E6F1E81BB9E37200A4466C /* NotificationCenter.framework */,

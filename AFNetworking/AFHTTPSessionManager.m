@@ -63,6 +63,8 @@
     return [self initWithBaseURL:nil sessionConfiguration:configuration];
 }
 
+
+#pragma mark -01、初始化方法
 - (instancetype)initWithBaseURL:(NSURL *)url
            sessionConfiguration:(NSURLSessionConfiguration *)configuration
 {
@@ -77,7 +79,7 @@
     }
 
     self.baseURL = url;
-
+    //默认的Serializer为 Http Request & JSON Request
     self.requestSerializer = [AFHTTPRequestSerializer serializer];
     self.responseSerializer = [AFJSONResponseSerializer serializer];
 
@@ -115,7 +117,7 @@
     [super setSecurityPolicy:securityPolicy];
 }
 
-#pragma mark -
+#pragma mark - 普通方法
 
 - (NSURLSessionDataTask *)GET:(NSString *)URLString
                    parameters:(id)parameters
@@ -335,6 +337,8 @@
     return dataTask;
 }
 
+#pragma mark -GET、POST、PUT、PATCH、DELETE方法的调用方法
+
 - (NSURLSessionDataTask *)dataTaskWithHTTPMethod:(NSString *)method
                                        URLString:(NSString *)URLString
                                       parameters:(id)parameters
@@ -345,6 +349,7 @@
                                          failure:(void (^)(NSURLSessionDataTask *, NSError *))failure
 {
     NSError *serializationError = nil;
+    ///通过requestSerializer 生成 request
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:method URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:&serializationError];
     for (NSString *headerField in headers.keyEnumerator) {
         [request addValue:headers[headerField] forHTTPHeaderField:headerField];
