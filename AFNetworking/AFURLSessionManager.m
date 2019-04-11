@@ -521,6 +521,7 @@ static NSString * const AFNSURLSessionTaskDidSuspendNotification = @"com.alamofi
  
     self.responseSerializer = [AFJSONResponseSerializer serializer];
 
+    
     self.securityPolicy = [AFSecurityPolicy defaultPolicy];
 
 #if !TARGET_OS_WATCH
@@ -558,7 +559,7 @@ static NSString * const AFNSURLSessionTaskDidSuspendNotification = @"com.alamofi
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark -
+#pragma mark - 会话创建
 
 - (NSURLSession *)session {
     

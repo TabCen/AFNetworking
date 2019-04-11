@@ -100,6 +100,7 @@
     [super setResponseSerializer:responseSerializer];
 }
 
+/// 安全策略
 @dynamic securityPolicy;
 
 - (void)setSecurityPolicy:(AFSecurityPolicy *)securityPolicy {
