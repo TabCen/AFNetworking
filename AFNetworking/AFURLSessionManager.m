@@ -563,7 +563,7 @@ static NSString * const AFNSURLSessionTaskDidSuspendNotification = @"com.alamofi
 #pragma mark - 会话创建
 
 - (NSURLSession *)session {
-    ///TODO:  @synchronized(obj) {} 同步锁
+    ///TODO:  @synchronized(obj) {} 同步锁，递归方式实现，在多线程同步锁中性能最差的一个
     @synchronized (self) {
         if (!_session) {
             _session = [NSURLSession sessionWithConfiguration:self.sessionConfiguration delegate:self delegateQueue:self.operationQueue];

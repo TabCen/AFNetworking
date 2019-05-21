@@ -352,8 +352,7 @@ forHTTPHeaderField:(NSString *)field
     self.queryStringSerialization = block;
 }
 
-#pragma mark - 生成 Request
-
+#pragma mark - 主要 生成 Request
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method
                                  URLString:(NSString *)URLString
                                 parameters:(id)parameters
@@ -471,7 +470,7 @@ forHTTPHeaderField:(NSString *)field
     return mutableRequest;
 }
 
-#pragma mark - AFURLRequestSerialization 生成NSURLRequest
+#pragma mark - 协议实现  HTTPRequestSerialization实现1
 
 - (NSURLRequest *)requestBySerializingRequest:(NSURLRequest *)request
                                withParameters:(id)parameters
@@ -508,7 +507,8 @@ forHTTPHeaderField:(NSString *)field
             }
         }
     }
-
+    
+    ///TODO: @"GET", @"HEAD", @"DELETE" 三种 是将参数拼接到URL上的，其余的是放在body中
     if ([self.HTTPMethodsEncodingParametersInURI containsObject:[[request HTTPMethod] uppercaseString]]) {
         if (query && query.length > 0) {
             mutableRequest.URL = [NSURL URLWithString:[[mutableRequest.URL absoluteString] stringByAppendingFormat:mutableRequest.URL.query ? @"&%@" : @"?%@", query]];
@@ -1329,7 +1329,7 @@ typedef enum {
     return serializer;
 }
 
-#pragma mark - AFURLRequestSerializer
+#pragma mark - 协议实现
 
 - (NSURLRequest *)requestBySerializingRequest:(NSURLRequest *)request
                                withParameters:(id)parameters
