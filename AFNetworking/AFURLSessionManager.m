@@ -509,8 +509,9 @@ static NSString * const AFNSURLSessionTaskDidSuspendNotification = @"com.alamofi
     if (!self) {
         return nil;
     }
-
+    
     if (!configuration) {
+    #pragma mark 设置默认sessionConfiguration为default 共享缓存、Cookie
         configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     }
 
@@ -562,7 +563,7 @@ static NSString * const AFNSURLSessionTaskDidSuspendNotification = @"com.alamofi
 #pragma mark - 会话创建
 
 - (NSURLSession *)session {
-    
+    ///TODO:  @synchronized(obj) {} 同步锁
     @synchronized (self) {
         if (!_session) {
             _session = [NSURLSession sessionWithConfiguration:self.sessionConfiguration delegate:self delegateQueue:self.operationQueue];

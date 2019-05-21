@@ -64,16 +64,18 @@
 }
 
 
-#pragma mark -01、初始化方法
+#pragma mark 01、初始化方法
 - (instancetype)initWithBaseURL:(NSURL *)url
            sessionConfiguration:(NSURLSessionConfiguration *)configuration
 {
+    #pragma mark NSURLSessionConfiguration default、ephemeral、background 三种配置，请求、响应超时
     self = [super initWithSessionConfiguration:configuration];
     if (!self) {
         return nil;
     }
 
     // Ensure terminal slash for baseURL path, so that NSURL +URLWithString:relativeToURL: works as expected
+    #pragma mark 路径大于0时并且判断最后一位是否不包含“/”，如果不包含则后面拼接一个“/”
     if ([[url path] length] > 0 && ![[url absoluteString] hasSuffix:@"/"]) {
         url = [url URLByAppendingPathComponent:@""];
     }
